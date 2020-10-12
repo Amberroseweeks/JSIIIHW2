@@ -32,6 +32,9 @@ const getPosts = async () => {
   posts.forEach((getPosts, index) => {
     postTitles.push(posts[index].title);
   });
+
+// const posts = await getPosts();
+
 // return posts;
 console.log(posts);
 };

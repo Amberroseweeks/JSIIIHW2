@@ -42,3 +42,24 @@ console.log(posts);
 
 
 getPosts();
+
+
+userNames =[];
+const getUsers = async () => {
+  const response = await fetch(
+    "https://jsonplaceholder.typicode.com/users"
+  );
+  users = await response.json();
+  users.forEach((getUsers, index) => {
+    userNames.push(users[index].name);
+  });
+
+// const posts = await getPosts();
+
+// return posts;
+console.log(users);
+};
+// const posts = await getPosts();
+
+
+getUsers();

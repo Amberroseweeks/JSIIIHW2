@@ -22,6 +22,7 @@ When a user clicks on a post, make an API call to retrieve the comments associat
 
 */
 
+const resultsDiv = document.getElementsByClassName("results")[0];
 
 postTitles =[];
 const getPosts = async () => {
@@ -51,8 +52,22 @@ const getUsers = async () => {
   );
   users = await response.json();
   users.forEach((getUsers, index) => {
+    resultsDiv.innerHTML += `<div class="infoCard"> <span class="cityName"><b>${users[index].name}</b>, posted ${posts[index].title}, is famous for the ${users.name}.</span></div>`;
+    resultsDiv.classList.add("posts", "col-md");
     userNames.push(users[index].name);
   });
+
+//   userNames =[];
+// const getUsers = async () => {
+//   const response = await fetch(
+//     "https://jsonplaceholder.typicode.com/users"
+//   );
+//   users = await response.json();
+//   users.forEach((getUsers, index) => {
+//     resultsDiv.innerHTML += `<div class="infoCard"> <span class="cityName"><b>${users.name}</b>, a city with a population of ${users.name}, is famous for the ${users.name}.</span></div>`;
+//     resultsDiv.classList.add("posts", "col-md");
+//     userNames.push(users[index].name);
+//   });
 
 // const posts = await getPosts();
 
